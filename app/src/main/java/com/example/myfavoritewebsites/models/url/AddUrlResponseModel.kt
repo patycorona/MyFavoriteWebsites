@@ -8,5 +8,5 @@ import kotlinx.parcelize.RawValue
 
 class AddUrlResponseModel(
     var alias: String = "",
-    var links: @RawValue MutableList<AddUrlResult> = mutableListOf()
+    var links: @RawValue AddUrlResult = AddUrlResult()
 ) : Parcelable

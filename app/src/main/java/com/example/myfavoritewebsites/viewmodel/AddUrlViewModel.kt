@@ -3,6 +3,7 @@ package com.example.myfavoritewebsites.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myfavoritewebsites.models.url.AddUrlResponseModel
+import com.example.myfavoritewebsites.models.url.AddUrlResult
 import com.example.myfavoritewebsites.repository.AddUrlRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.disposables.CompositeDisposable
@@ -22,7 +23,7 @@ class AddUrlViewModel @Inject constructor
     }
 
     // add News
-    fun addNewsValidation(url: String) {
+    fun addNewValidation(url: String) {
 
         compositeDisposable += addUrlRepository.addNewUrl(
             url = url
@@ -33,7 +34,7 @@ class AddUrlViewModel @Inject constructor
             }, {
                 urlRegisterLD.postValue(
                     AddUrlResponseModel(
-                        alias = url
+                        alias = url, links = AddUrlResult(self = url, short = url)
                     )
                 )
             })

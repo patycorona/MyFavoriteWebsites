@@ -30,8 +30,8 @@ class MainActivity : AppCompatActivity() {
     // Callback
     private val urlAddResult = Observer<AddUrlResponseModel> { accessResponseModel ->
         if (accessResponseModel.alias != "") {
-            subString(accessResponseModel.alias)
-            // startActivityItemRecipebook()
+            Toast.makeText(this, "ya paso ${accessResponseModel.links.self}", Toast.LENGTH_LONG)
+                .show()
         } else {
             Toast.makeText(this, "an exception occurred, please try again", Toast.LENGTH_SHORT)
                 .show()
@@ -42,12 +42,7 @@ class MainActivity : AppCompatActivity() {
         viewModelUrl.urlRegisterLD.observe(this, urlAddResult)
     }
 
-    fun subString(alias: String) {
-        var cadena = alias.substring(4, 4)
-        Toast.makeText(this, "ya paso $cadena", Toast.LENGTH_LONG).show()
-    }
-
     fun addUrl(url: String) {
-        viewModelUrl.addNewsValidation(url)
+        viewModelUrl.addNewValidation(url)
     }
 }

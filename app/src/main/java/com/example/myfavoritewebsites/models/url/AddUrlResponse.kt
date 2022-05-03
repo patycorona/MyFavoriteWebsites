@@ -4,5 +4,5 @@ import com.google.gson.annotations.SerializedName
 
 data class AddUrlResponse(
     @SerializedName("alias") val alias: String = "",
-    @SerializedName("_links") val links: MutableList<AddUrlResult> = mutableListOf()
+    @SerializedName("_links") val links: AddUrlResult = AddUrlResult()
 )
