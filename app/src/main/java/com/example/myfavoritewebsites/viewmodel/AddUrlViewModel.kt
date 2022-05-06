@@ -2,6 +2,7 @@ package com.example.myfavoritewebsites.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.myfavoritewebsites.models.url.AddUrlModel
 import com.example.myfavoritewebsites.models.url.AddUrlResponseModel
 import com.example.myfavoritewebsites.models.url.AddUrlResult
 import com.example.myfavoritewebsites.repository.AddUrlRepository
@@ -20,6 +21,10 @@ class AddUrlViewModel @Inject constructor
 
     val urlRegisterLD: MutableLiveData<AddUrlResponseModel> by lazy {
         MutableLiveData<AddUrlResponseModel>()
+    }
+
+    val addUrlListLD: MutableLiveData<AddUrlModel> by lazy {
+        MutableLiveData<AddUrlModel>()
     }
 
     // add News

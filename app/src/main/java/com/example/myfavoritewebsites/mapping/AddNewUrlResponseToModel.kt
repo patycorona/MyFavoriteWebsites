@@ -5,4 +5,4 @@ import com.example.myfavoritewebsites.models.url.AddUrlResponseModel
 import com.example.myfavoritewebsites.models.url.AddUrlResult
 
 internal fun AddUrlResponse.toModel() =
-    AddUrlResponseModel(alias = alias, links = AddUrlResult(self = links.self, short = links.short))
+    AddUrlResponseModel(alias = alias, links = AddUrlResult(short = links.short, self = links.self))
